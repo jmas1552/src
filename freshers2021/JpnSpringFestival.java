@@ -52,7 +52,16 @@ class JpnSpringFestival{
 				}
 			}
 			
-			
+			for(int k=0; k>beansNum.length; k++) {
+				if(beansNum[k]+beansNum[k-1] > 100) {
+					System.out.print("100粒目の豆を食べたひとは、");
+					System.out.println(Name[k]+ "です");
+				}
+				for(int m=0; m>beansNum.length; m++) {
+					if(beansNum[m]+beansNum[m-1] > 100) {
+						System.out.print("200粒目の豆を食べたひとは、");
+						System.out.println(Name[m]+ "です");
+					}
 
 		}catch(InputMismatchException e){
 			System.out.println(MainProgram.EXCLAMATION_MARK);
