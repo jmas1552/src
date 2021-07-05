@@ -7,7 +7,7 @@ class JpnSpringFestival{
 	
 	private static final String YES= "y";
 	private static final String NO="n";
-	public static final String Name[]=new String[6];
+	public static final String names[]=new String[6];
 	public static final int beansNum[]=new int[6];
 
 	
@@ -16,12 +16,12 @@ class JpnSpringFestival{
 
 
 		
-		Name[0]="じいちゃん";
-		Name[1]="ばあちゃん";
-		Name[2]="とうちゃん";
-		Name[3]="かあちゃん";
-		Name[4]="おれ";
-		Name[5]="いもうと";
+		names[0]="じいちゃん";
+		names[1]="ばあちゃん";
+		names[2]="とうちゃん";
+		names[3]="かあちゃん";
+		names[4]="おれ";
+		names[5]="いもうと";
 		
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊");
 		System.out.println("節分アルゴリズムプログラム");
@@ -37,44 +37,31 @@ class JpnSpringFestival{
 			}
 			
 			for(int i=0; i < beansNum.length; i++) {
-					System.out.println(Name[i] + "の年齢");
+					System.out.println(names[i] + "の年齢");
 					beansNum[i]=stdIn.nextInt();
 					if(beansNum[i]>100){
 						System.exit(1);
 					}
 			}
 			for(int i=0; i < beansNum.length; i++) {
-					System.out.print("＊＊＊" + Name[i] + "は豆を");
+					System.out.print("＊＊＊" + names[i] + "は豆を");
 					System.out.println(beansNum[i]+ "粒食べました＊＊＊");
 			}
 			int sum=0;
+			String beans100Piaces=null;
+			String beans200Piaces=null;
 			for(int j=0; j<beansNum.length; j++){  
 				sum +=beansNum[j];
-				if(sum >=100){
-					System.out.print("100粒目の豆を食べたひとは、");
-					System.out.println(Name[j]+ "です");
-				}else{
-					System.out.print("100粒目の豆を食べたひとはいません。");
+				if (beans100Piaces == null && sum >= 100) {
+					beans100Piaces = names[j];
+					System.out.println("100粒目の豆を食べたひとは" + names[j]);
+				}else if (beans200Piaces == null && sum >= 200) {
+					beans200Piaces = names[j];
+							System.out.println("200粒目の豆を食べたひとは" + names[j]);
 				}
 			}
-			int countTwohundred=0;
-			for(int m=0; m<beansNum.length; m++){  
-				countTwohundred +=beansNum[m];
-				if(countTwohundred >=200){
-					System.out.print("200粒目の豆を食べたひとは、");
-					System.out.println(Name[m]+ "です");
-				}else{
-					System.out.print("100粒目の豆を食べたひとはいません。");				
-				}	
-			}	
-			
-			int sum=0;
-			for(int n=0; n<beansNum.length; n++){
-				sum +=beansNum[n];
-			}
-			System.out.print("家族全員で食べた豆の数は、");
-			System.out.println(sum + "です");	
-			
+				System.out.print("家族全員で食べた豆の数は、");
+				System.out.println(sum + "です");	
 		}catch(InputMismatchException e){
 			System.out.println(MainProgram.EXCLAMATION_MARK);
 			System.out.println(MainProgram.EROOR_MESSAGE_ILLEGAL_INPUT);
