@@ -7,7 +7,7 @@ class MainProgram{
 	public static final String EXCLAMATION_MARK="！！！！！！！！！！！！！！！！！！！！";
 	public static final String EROOR_MESSAGE_ILLEGAL_INPUT="不正な値が入力されました。処理を終了します。";
 	public static final String BLANK_LINE="";
-	public static final String GOOBY_MESSAGE="またのご利用をお待ちしております";
+	public static final String GOODBY_MESSAGE="またのご利用をお待ちしております";
 	public static final String THANKS_MESSAGE="ご利用ありがとうございました";
 	
 	
@@ -28,7 +28,7 @@ class MainProgram{
 		System.out.println("2 : 節分アルゴリズムプログラム");
 		System.out.println("3 : 今日の運勢プログラム");
 		System.out.println("4 : 電気自転車充電プログラム");
-		System.out.println("5：中華料理注文プログラム ");
+		System.out.println("5 ： 中華料理注文プログラム ");
 		System.out.println("9 : 処理終了");
 		
 		
@@ -42,12 +42,12 @@ class MainProgram{
 			System.out.println(EROOR_MESSAGE_ILLEGAL_INPUT);
 			System.out.println(EXCLAMATION_MARK);
 			System.out.println(BLANK_LINE);
-			System.out.println(GOOBY_MESSAGE);
+			System.out.println(GOODBY_MESSAGE);
 		}
 		//処理終了	
 		if(x == 9){
 			System.out.println(BLANK_LINE);
-			System.out.println(GOOBY_MESSAGE);
+			System.out.println(GOODBY_MESSAGE);
 			System.out.println(BLANK_LINE);	
 		}
 		
@@ -58,40 +58,40 @@ class MainProgram{
 				num.count();
 				System.out.println(BLANK_LINE);
 				System.out.println(THANKS_MESSAGE);
-				System.out.println(GOOBY_MESSAGE);
+				System.out.println(GOODBY_MESSAGE);
 			}
-				//節分アルゴリズムプログラム
+			//節分アルゴリズムプログラム
 			else if(x == 2){
-				JpnSpringFestival.algorithm();
+				JpnSpringFestival jpnSpringFestival = new JpnSpringFestival();
+				jpnSpringFestival.algorithm();
 				System.out.println(BLANK_LINE);
 				System.out.println(THANKS_MESSAGE);
-				System.out.println(GOOBY_MESSAGE);
-			}
-			//今日の運勢プログラム
+				System.out.println(GOODBY_MESSAGE);
+			}			//今日の運勢プログラム
 			else if(x == 3){
 // TODO				Fortune.today(); 
 				System.out.println(BLANK_LINE);
 				System.out.println(THANKS_MESSAGE);
-				System.out.println(GOOBY_MESSAGE);
+				System.out.println(GOODBY_MESSAGE);
 			}
 			//電気自転車充電プログラム
 			else if(x == 4){
 // TODO				Car.battery();
 				System.out.println(BLANK_LINE);
 				System.out.println(THANKS_MESSAGE);
-				System.out.println(GOOBY_MESSAGE);
+				System.out.println(GOODBY_MESSAGE);
 			}
 			//中華料理注文プログラム
 			else if(x == 5){
 //	TODO			Chn.order();
 				System.out.println(BLANK_LINE);
 				System.out.println(THANKS_MESSAGE);
-				System.out.println(GOOBY_MESSAGE);
+				System.out.println(GOODBY_MESSAGE);
 			}	
 		//例外処理
 		}catch(Exception e){
 			System.out.println(BLANK_LINE);
-			System.out.println(GOOBY_MESSAGE);
+			System.out.println(GOODBY_MESSAGE);
 			System.out.println(BLANK_LINE);
 		}
 	}
