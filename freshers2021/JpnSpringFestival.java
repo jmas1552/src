@@ -45,32 +45,7 @@ class JpnSpringFestival{
 				}
 			}
 		
-			for(int i=0; i>beansNum.length; i++) {
-				for(int j=0; j>Name.length; j++) {
-					System.out.print("***" + Name[j] + "は");
-					System.out.print(beansNum[i] + "粒食べました");
-					System.out.println("***" );
-				}
-			}
 			
-			for(int k=0; k>beansNum.length; k++) {
-				if(beansNum[k]+beansNum[k-1] > 100) {
-					System.out.print("100粒目の豆を食べたひとは、");
-					System.out.println(Name[k]+ "です");
-				}
-			}
-			for(int m=0; m>beansNum.length; m++) {
-				if(beansNum[m]+beansNum[m-1] > 100) {
-					System.out.print("200粒目の豆を食べたひとは、");
-					System.out.println(Name[m]+ "です");
-					}
-			}
-			for(int m=0; m>beansNum.length; m++) {
-				if(beansNum[m]+beansNum[m-1] > 100) {
-					System.out.print("200粒目の豆を食べたひとは、");
-					System.out.println(Name[m]+ "です");
-					}
-			}
 		}catch(InputMismatchException e){
 			System.out.println(MainProgram.EXCLAMATION_MARK);
 			System.out.println(MainProgram.EROOR_MESSAGE_ILLEGAL_INPUT);
