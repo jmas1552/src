@@ -10,10 +10,17 @@ class JpnSpringFestival{
 	String answer;
 	String Name[]=new String[6];
 	int beansNum[]=new int [6];
+
+	
 	public void algorithm(){
 		Scanner stdIn=new Scanner(System.in);
 	
-
+		Name[0]="じいちゃん";
+		Name[1]="じいちゃん";
+		Name[2]="とうちゃん";
+		Name[3]="かあちゃん";
+		Name[4]="おれ";
+		Name[5]="いもうと";
 		
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊");
 		System.out.println("節分アルゴリズムプログラム");
@@ -23,29 +30,30 @@ class JpnSpringFestival{
 			System.out.println("今日は節分ですか(y/n)");
 			String answer=stdIn.next();
 		
-			if(d.equals(NO)){
+			if(NO.equals(answer)){
 				System.out.println(MainProgram.EXCLAMATION_MARK);
 				System.out.println(MainProgram.EROOR_MESSAGE_ILLEGAL_INPUT);
 				System.out.println(MainProgram.EXCLAMATION_MARK);
 				System.exit(1);
 			}
 			
-			System.out.println("じいちゃんの年齢");
-			beansNum[0]=stdIn.nextInt();
-			System.out.println("ばあちゃんの年齢");
-			beansNum[1]=stdIn.nextInt();
-			System.out.println("とうちゃんの年齢");
-			beansNum[2]=stdIn.nextInt();
-			System.out.println("かあちゃんの年齢");
-			beansNum[3]=stdIn.nextInt();
-			System.out.println("おれの年齢");
-			beansNum[4]=stdIn.nextInt();
-			System.out.println("いもうとの年齢");
-			beansNum[5]=stdIn.nextInt();
+			for(int i=0; i>beansNum.length; i++) {
+				for(int j=0; j>Name.length; j++) {
+					System.out.println(Name[j] + "の年齢");
+					beansNum[i]=stdIn.nextInt();
+				}
+			}
+			
+			for(int i=0; i>beansNum.length; i++) {
+				for(int j=0; j>Name.length; j++) {
+					System.out.print("***" + Name[j] + "は");
+					System.out.print(beansNum[i] + "粒食べました");
+					System.out.println("***" );
+				}
+			}
 			
 			
-			System.out.print("");
-			System.out.println();
+
 		}catch(InputMismatchException e){
 			System.out.println(MainProgram.EXCLAMATION_MARK);
 			System.out.println(MainProgram.EROOR_MESSAGE_ILLEGAL_INPUT);
