@@ -1,19 +1,20 @@
 package freshers2021;
+
 import java.util.Scanner;
-import java.util. InputMismatchException;
+import java.util.InputMismatchException;
 
 class JpnSpringFestival{
 	
 	private static final String YES= "y";
 	private static final String NO="n";
-
+	public static final String Name[]=new String[6];
+	public static final int beansNum[]=new int[6];
 
 	
-	public static void algorithm(){
+	public void algorithm(){
 		Scanner stdIn=new Scanner(System.in);
 
-		String Name[]=new String[6];
-		int beansNum[]=new int[6];
+
 		
 		Name[0]="‚¶‚¢‚¿‚á‚ñ";
 		Name[1]="‚Î‚ ‚¿‚á‚ñ";
@@ -42,10 +43,14 @@ class JpnSpringFestival{
 						System.exit(1);
 					}
 			}
-			int count=0;
+			for(int i=0; i < beansNum.length; i++) {
+					System.out.print("–––" + Name[i] + "‚Í“¤‚ğ");
+					System.out.println(beansNum[i]+ "—±H‚×‚Ü‚µ‚½–––");
+			}
+			int sum=0;
 			for(int j=0; j<beansNum.length; j++){  
-				count +=beansNum[j];
-				if(count >=100){
+				sum +=beansNum[j];
+				if(sum >=100){
 					System.out.print("100—±–Ú‚Ì“¤‚ğH‚×‚½‚Ğ‚Æ‚ÍA");
 					System.out.println(Name[j]+ "‚Å‚·");
 				}else{
