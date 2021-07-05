@@ -7,14 +7,15 @@ class JpnSpringFestival{
 	
 	private static final String YES= "y";
 	private static final String NO="n";
-	String answer;
-	String Name[]=new String[6];
-	int beansNum[]=new int [6];
+
 
 	
-	public void algorithm(){
+	public void main(String[] args){
 		Scanner stdIn=new Scanner(System.in);
-	
+
+		String Name[]=new String[6];
+		int beansNum[]=new int[6];
+		
 		Name[0]="じいちゃん";
 		Name[1]="じいちゃん";
 		Name[2]="とうちゃん";
@@ -43,7 +44,7 @@ class JpnSpringFestival{
 					beansNum[i]=stdIn.nextInt();
 				}
 			}
-			
+		
 			for(int i=0; i>beansNum.length; i++) {
 				for(int j=0; j>Name.length; j++) {
 					System.out.print("***" + Name[j] + "は");
@@ -57,19 +58,24 @@ class JpnSpringFestival{
 					System.out.print("100粒目の豆を食べたひとは、");
 					System.out.println(Name[k]+ "です");
 				}
-				for(int m=0; m>beansNum.length; m++) {
-					if(beansNum[m]+beansNum[m-1] > 100) {
-						System.out.print("200粒目の豆を食べたひとは、");
-						System.out.println(Name[m]+ "です");
+			}
+			for(int m=0; m>beansNum.length; m++) {
+				if(beansNum[m]+beansNum[m-1] > 100) {
+					System.out.print("200粒目の豆を食べたひとは、");
+					System.out.println(Name[m]+ "です");
 					}
-
+			}
+			for(int m=0; m>beansNum.length; m++) {
+				if(beansNum[m]+beansNum[m-1] > 100) {
+					System.out.print("200粒目の豆を食べたひとは、");
+					System.out.println(Name[m]+ "です");
+					}
+			}
 		}catch(InputMismatchException e){
 			System.out.println(MainProgram.EXCLAMATION_MARK);
 			System.out.println(MainProgram.EROOR_MESSAGE_ILLEGAL_INPUT);
 			System.out.println(MainProgram.EXCLAMATION_MARK);
 			System.exit(1);
 		}
-
-
 	}
 }
