@@ -41,12 +41,10 @@ class JpnSpringFestival {
 				// 選択肢以外の入力があった際はエラーメッセージ表示
 			} else {
 				MainProgram.messageInputMismatch();
-				System.exit(1);
 			}
 			// 識別子に対応しない入力が発生した際は例外処理する
 		} catch (InputMismatchException e) {
 			MainProgram.messageInputMismatch();
-			System.exit(1);
 		}
 	}
 
@@ -97,8 +95,10 @@ class JpnSpringFestival {
 
 			// 識別子に対応しない入力が発生した際は例外処理する
 		} catch (InputMismatchException e) {
-			MainProgram.messageInputMismatch();
-			System.exit(1);
+			MainProgram.messageInputMismatch() ;
+			//全般的なエラーはメインプログラムで処理して終了
+		}catch (Exception e) {
+			throw new MainProgram.Exception e;
 		}
 	}
 }

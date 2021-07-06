@@ -97,6 +97,7 @@ class MainProgram {
 		System.out.println(EXCLAMATION_MARK);
 		System.out.println(BLANK_LINE);
 		System.out.println(GOODBY_MESSAGE);
+		System.exit(1);
 	}
 }
 
