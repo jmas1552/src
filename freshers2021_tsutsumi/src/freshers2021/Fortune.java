@@ -14,33 +14,17 @@ class Fortune{
 	public static final String MIDDLE_HAPPY="’†‹g‚Å‚·B";
 	public static final String NEXT_TO_WORST_HAPPY="¬‹g‚Å‚·";
 	public static final String WORST_HAPPY="‹¥‚Å‚·Bƒtƒ@ƒCƒgII";
-	public static  String name;
+	String name;
+
+
+
+	public static void  main(String[]args){
+	
 	Scanner stdIn=new Scanner(System.in);
 	Random rand=new Random();
-
-
-	public  String main(String[]args){ //ˆê’UƒƒCƒ“ƒƒ\ƒbƒh
-
-
 		
 			//—”İ’è
  		int rnd = rand.nextInt(10);
- 			 if(0 <= rnd && rnd < 1) {
- 			 // ‘å‹g
-			 	return BEST_HAPPY;
-  			}else if(1 < rnd && rnd <= 2) {
-    		// ‹g
-  				return SECOND_HAPPY;
-  			}else if(2 < rnd && rnd <= 6){
-    		// ’†‹g
-   				return MIDDLE_HAPPY;	
-  			}else if(6 < rnd && rnd <= 8){
-    		// ¬‹g
-   				return NEXT_TO_WORST_HAPPY;
-  			}else if(8 < rnd && rnd <= 10){
-    		// ‹¥
-   				return WORST_HAPPY;
-  			}
 		
 		System.out.println("–––––––––––");
 		System.out.println("¡“ú‚Ì‰^¨ƒvƒƒOƒ‰ƒ€");
@@ -60,7 +44,38 @@ class Fortune{
 			}
 		}
 		System.out.print(name + "‚³‚ñ‚Ì¡“ú‚Ì‰^¨‚ÍA");
-		System.out.println(rnd);
-		
+		 	
+			if(0 <= rnd && rnd < 1) {
+ 			 // ‘å‹g
+		 	bestHappy();
+  			}else if(1 <= rnd && rnd <= 2) {
+    		// ‹g
+  				secondHappy();
+  			}else if(3 <= rnd && rnd <= 6){
+    		// ’†‹g
+   				middleHappy();
+  			}else if(6 < rnd && rnd <= 8){
+    		// ¬‹g
+   				secondUnHappy();
+  			}else if(8 < rnd && rnd <= 10){
+    		// ‹¥
+   				worstHappy();
+  			}
+	}
+	
+	public static void bestHappy() {
+		System.out.print(BEST_HAPPY);
+	}
+	public static void secondHappy() {
+		System.out.print(SECOND_HAPPY);
+	}
+	public static void middleHappy() {
+		System.out.print(MIDDLE_HAPPY);
+	}
+	public static void secondUnHappy() {
+		System.out.print(NEXT_TO_WORST_HAPPY);
+	}
+	public static void worstHappy() {
+		System.out.print(WORST_HAPPY);
 	}
 }
