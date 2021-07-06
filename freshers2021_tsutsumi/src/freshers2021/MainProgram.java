@@ -33,10 +33,6 @@ class MainProgram {
 			System.out.print("実行したいプログラム番号を選択してください。(1-5,9)：");
 			int x = stdIn.nextInt();
 
-			// 不正入力
-			if (x != 9 && !(x >= 1 && x <= 5)) {
-				messageInputMismatch() ;
-			}
 			// 処理終了
 			if (x == 9) {
 				System.out.println(BLANK_LINE);
@@ -79,7 +75,10 @@ class MainProgram {
 				System.out.println(BLANK_LINE);
 				System.out.println(THANKS_MESSAGE);
 				System.out.println(GOODBY_MESSAGE);
+			}else {
+				messageInputMismatch() ;
 			}
+			
 			// 不正入力処理
 		}catch(InputMismatchException e){
 			messageInputMismatch() ;
