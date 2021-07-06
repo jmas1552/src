@@ -32,7 +32,7 @@ class MainProgram{
 		System.out.println("9 : 処理終了");
 		
 		
-		
+		try{
 		System.out.print("実行したいプログラム番号を選択してください。(1-5,9)："); 
 		int x=stdIn.nextInt();
 	
@@ -51,7 +51,7 @@ class MainProgram{
 			System.out.println(BLANK_LINE);	
 		}
 		
-		try{
+		
 			//数字並び替えプログラム
 			if(x == 1){
 				Num num = new Num();
