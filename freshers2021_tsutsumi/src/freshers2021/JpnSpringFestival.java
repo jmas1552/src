@@ -98,6 +98,7 @@ class JpnSpringFestival {
 			MainProgram.messageInputMismatch() ;
 			//全般的なエラーはメインプログラムで処理して終了
 		}catch (Exception e) {
+			throw 
 		}
 	}
 }

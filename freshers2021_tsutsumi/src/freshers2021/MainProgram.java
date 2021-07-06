@@ -83,13 +83,13 @@ class MainProgram {
 		}catch(InputMismatchException e){
 			messageInputMismatch() ;
 			//ó·äOèàóù
-		} catch (Exception e) {
-			System.out.println(BLANK_LINE);
-			System.out.println(GOODBY_MESSAGE);
-			System.out.println(BLANK_LINE);
+		}catch (SubException subEx) {
+			messageException();
+		}catch (Exception ex)  {
+			messageException();
 		}
+	}
 
-	}	
 	public static void messageInputMismatch() {
 		System.out.println(EXCLAMATION_MARK);
 		System.out.println(EROOR_MESSAGE_ILLEGAL_INPUT);
@@ -98,5 +98,10 @@ class MainProgram {
 		System.out.println(GOODBY_MESSAGE);
 		System.exit(1);
 	}
-}
 
+	public static void messageException() {
+		System.out.println(BLANK_LINE);
+		System.out.println(GOODBY_MESSAGE);
+		System.out.println(BLANK_LINE);
+	}
+}
