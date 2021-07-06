@@ -7,8 +7,8 @@ class MainProgram{
 	public static final String EXCLAMATION_MARK="！！！！！！！！！！！！！！！！！！！！";
 	public static final String EROOR_MESSAGE_ILLEGAL_INPUT="不正な値が入力されました。処理を終了します。";
 	public static final String BLANK_LINE="";
-	public static final String GOODBY_MESSAGE="またのご利用をお待ちしております";
-	public static final String THANKS_MESSAGE="ご利用ありがとうございました";
+	public static final String GOODBY_MESSAGE="またのご利用をお待ちしております。";
+	public static final String THANKS_MESSAGE="ご利用ありがとうございました。";
 	
 	
 	public static void main(String[] args){
