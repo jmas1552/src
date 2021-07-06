@@ -18,7 +18,7 @@ class Fortune{
 
 
 
-	public static void  main(String[]args){
+	public static void  main(String[]args){Å@//TODO å„Ç…èCê≥
 	
 	Scanner stdIn=new Scanner(System.in);
 	Random rand=new Random();
@@ -62,7 +62,7 @@ class Fortune{
    				worstHappy();
   			}
 	}
-	
+	//TODO å„Ç…èCê≥	
 	public static void bestHappy() {
 		System.out.print(BEST_HAPPY);
 	}
