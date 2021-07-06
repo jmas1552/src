@@ -34,6 +34,14 @@ class JpnSpringFestival {
 			System.exit(0);
 		} else if (YES.equals(answer)) {
 			startAlgorithm();
+		}else {
+			System.out.println(MainProgram.EXCLAMATION_MARK);
+			System.out.println(MainProgram.EROOR_MESSAGE_ILLEGAL_INPUT);
+			System.out.println(MainProgram.EXCLAMATION_MARK);
+			System.out.println(MainProgram.BLANK_LINE);
+			System.out.println(MainProgram.GOODBY_MESSAGE);
+			System.out.println(MainProgram.BLANK_LINE);
+			System.exit(1);
 		}
 	}
 
