@@ -40,12 +40,7 @@ class JpnSpringFestival {
 			
 		//選択肢以外の入力があった際はエラーメッセージ表示
 		}else {
-			System.out.println(MainProgram.EXCLAMATION_MARK);
-			System.out.println(MainProgram.EROOR_MESSAGE_ILLEGAL_INPUT);
-			System.out.println(MainProgram.EXCLAMATION_MARK);
-			System.out.println(MainProgram.BLANK_LINE);
-			System.out.println(MainProgram.GOODBY_MESSAGE);
-			System.out.println(MainProgram.BLANK_LINE);
+			MainProgram.messageInputMismatch() ;
 			System.exit(1);
 		}
 	}
@@ -94,9 +89,7 @@ class JpnSpringFestival {
 			
 			//識別子に対応しない入力が発生した際は例外処理する
 		} catch (InputMismatchException e) {
-			System.out.println(MainProgram.EXCLAMATION_MARK);
-			System.out.println(MainProgram.EROOR_MESSAGE_ILLEGAL_INPUT);
-			System.out.println(MainProgram.EXCLAMATION_MARK);
+			MainProgram.messageInputMismatch() ;
 			System.exit(1);
 		}
 	}
