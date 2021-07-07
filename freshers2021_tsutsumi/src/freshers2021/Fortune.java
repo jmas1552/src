@@ -1,27 +1,23 @@
 package freshers2021;
 
-
 import java.util.Scanner;
 import java.util.Random;
 
-import java.util. InputMismatchException;
+import java.util.InputMismatchException;
 
-class Fortune{
-	
+class Fortune {
 
-	public static final String BEST_HAPPY="大吉です。おめでとうございます！";
-	public static final String SECOND_HAPPY="吉です。";
-	public static final String MIDDLE_HAPPY="中吉です。";
-	public static final String NEXT_TO_WORST_HAPPY="小吉です";
-	public static final String WORST_HAPPY="凶です。ファイト！！";
+	public static final String BEST_HAPPY = "大吉です。おめでとうございます！";
+	public static final String SECOND_HAPPY = "吉です。";
+	public static final String MIDDLE_HAPPY = "中吉です。";
+	public static final String NEXT_TO_WORST_HAPPY = "小吉です";
+	public static final String WORST_HAPPY = "凶です。ファイト！！";
 	String name;
-
-
 
 	public void  today(){
 	
-	Scanner stdIn=new Scanner(System.in);
-	Random rand=new Random();
+		Scanner stdIn=new Scanner(System.in);
+		Random rand=new Random();
 		
 			//乱数設定
  		int rnd = rand.nextInt(10);
@@ -29,7 +25,7 @@ class Fortune{
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊");
 		System.out.println("今日の運勢プログラム");
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊");
-		
+		try {	
 		System.out.println("あなたの名前を入力してください");
 		String name=stdIn.next();
 		
@@ -43,6 +39,11 @@ class Fortune{
 				}//処理終了
 			}
 		}
+		
+		} catch (InputMismatchException e) {
+			MainProgram.messageInputMismatch();
+		}
+			
 		System.out.print(name + "さんの今日の運勢は、");
 		 	
 			if(0 <= rnd && rnd < 1) {
@@ -61,19 +62,24 @@ class Fortune{
     		// 凶
    				worstHappy();
   			}
-	}	
+	}
+
 	public void bestHappy() {
 		System.out.print(BEST_HAPPY);
 	}
+
 	public void secondHappy() {
 		System.out.print(SECOND_HAPPY);
 	}
+
 	public void middleHappy() {
 		System.out.print(MIDDLE_HAPPY);
 	}
+
 	public void secondUnHappy() {
 		System.out.print(NEXT_TO_WORST_HAPPY);
 	}
+
 	public void worstHappy() {
 		System.out.print(WORST_HAPPY);
 	}

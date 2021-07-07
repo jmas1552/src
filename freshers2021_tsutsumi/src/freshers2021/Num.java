@@ -2,7 +2,6 @@ package freshers2021;
 
 import java.util.Scanner;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util. InputMismatchException;
 
 class Num{
