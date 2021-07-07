@@ -13,14 +13,12 @@ class Fortune {
 	public static final String WORST_HAPPY = "凶です。ファイト！！";
 	String name;
 	String nameAgain;
+	Scanner stdIn=new Scanner(System.in);
+	Random rand=new Random();
 	
 	public void  today(){
-	
-		Scanner stdIn=new Scanner(System.in);
-		Random rand=new Random();
-		
-			//乱数設定
- 		int rnd = rand.nextInt(10);
+
+ 		
 		
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊");
 		System.out.println("今日の運勢プログラム");
@@ -31,37 +29,45 @@ class Fortune {
 				System.out.print("あなたの名前を入力してください");
 				name=stdIn.next();
 				if(!("".equals(name))){
-					continue;
+					todaysFortune();
+					break;
 				}else if(i == 2){
 					System.out.println("！！！！！！！！！！！！！！！！！！！");
 					System.out.println("名前の入力がなかったため、処理を終了します。");
 					System.out.println("！！！！！！！！！！！！！！！！！！！");
-					System.exit(0);
+					break;
 				}
 			}
 		
 		} catch (InputMismatchException e) {
 			MainProgram.messageInputMismatch();
 		}
-			
-		System.out.print(name + "さんの今日の運勢は、");
-		 	
-			if(0 <= rnd && rnd < 1) {
- 			 // 大吉
-		 	bestHappy();
-  			}else if(1 <= rnd && rnd <= 2) {
-    		// 吉
-  				secondHappy();
-  			}else if(3 <= rnd && rnd <= 6){
-    		// 中吉
-   				middleHappy();
-  			}else if(6 < rnd && rnd <= 8){
-    		// 小吉
-   				secondUnHappy();
-  			}else if(8 < rnd && rnd <= 10){
-    		// 凶
-   				worstHappy();
-  			}
+	}	
+	
+	public void  todaysFortune(){
+		
+		
+		System.out.print(name + "さんの今日の運勢は、" );
+	
+		//乱数設定
+		int rnd = rand.nextInt(10);
+		
+		if(0 <= rnd && rnd < 1) {
+		 // 大吉
+	 	bestHappy();
+			}else if(1 <= rnd && rnd <= 2) {
+		// 吉
+				secondHappy();
+			}else if(3 <= rnd && rnd <= 6){
+		// 中吉
+				middleHappy();
+			}else if(6 < rnd && rnd <= 8){
+		// 小吉
+				secondUnHappy();
+			}else if(8 < rnd && rnd <= 10){
+		// 凶
+				worstHappy();
+			}
 	}
 
 	public void bestHappy() {
