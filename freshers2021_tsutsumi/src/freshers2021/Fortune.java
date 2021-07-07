@@ -32,8 +32,9 @@ class Fortune {
 			//‚Ü‚¾ğŒİ’èŠ®—¹‚µ‚Ä‚¢‚È‚¢
 			for(int i=0; i<3; i++){
 				System.out.println("‚ ‚È‚½‚Ì–¼‘O‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
-					name=stdIn.next();
-				if(name != null){
+				String nameAgain=stdIn.next();
+				if(nameAgain != null){
+					name=nameAgain;
 					break;
 				}//ˆ—I—¹
 			}
