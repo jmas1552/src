@@ -11,7 +11,7 @@ class JpnSpringFestival {
 	public static final int beansNum[] = new int[6];
 	Scanner stdIn = new Scanner(System.in);
 
-	public void algorithm() {
+	public void algorithm() throws SubException{
 
 		names[0] = "じいちゃん";
 		names[1] = "ばあちゃん";
@@ -49,7 +49,7 @@ class JpnSpringFestival {
 	}
 
 	// 節分の日アルゴリズム開始
-	public void startAlgorithm() {
+	public void startAlgorithm() throws SubException{
 
 		try {
 			// 各人の年齢入力を要求

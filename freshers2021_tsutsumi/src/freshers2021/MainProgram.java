@@ -83,7 +83,7 @@ class MainProgram {
 		}catch(InputMismatchException e){
 			messageInputMismatch() ;
 			//—áŠOˆ—
-		}catch (SubException subEx) {
+		}catch (SubException subEx){//TODOC³’†
 			messageException();
 		}catch (Exception ex)  {
 			messageException();
