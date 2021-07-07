@@ -29,12 +29,11 @@ class Fortune {
 		System.out.println("あなたの名前を入力してください");
 		String name=stdIn.next();
 		
-		if(name==null){
-			//まだ条件設定完了していない
+		if("".equals(name)){
 			for(int i=0; i<3; i++){
-				System.out.println("あなたの名前を入力してください");
+				System.out.print("あなたの名前を入力してください");
 				nameAgain=stdIn.next();
-				if(nameAgain != null){
+				if("".equals(nameAgain)){
 					nameAgain();
 					continue;
 				}//処理終了
