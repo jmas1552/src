@@ -2,7 +2,6 @@ package freshers2021;
 
 import java.util.Scanner;
 import java.util.Random;
-
 import java.util.InputMismatchException;
 
 class Fortune {
@@ -35,7 +34,7 @@ class Fortune {
 				System.out.println("‚ ‚È‚½‚Ì–¼‘O‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
 					name=stdIn.next();
 				if(name != null){
-					continue;
+					break;
 				}//ˆ—I—¹
 			}
 		}

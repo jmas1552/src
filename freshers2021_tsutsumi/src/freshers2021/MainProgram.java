@@ -57,7 +57,8 @@ class MainProgram {
 				System.out.println(GOODBY_MESSAGE);
 			} // ¡“ú‚Ì‰^¨ƒvƒƒOƒ‰ƒ€
 			else if (x == 3) {
-// TODO				Fortune.today(); 
+				Fortune fortune = new Fortune();
+				fortune.today(); 
 				System.out.println(BLANK_LINE);
 				System.out.println(THANKS_MESSAGE);
 				System.out.println(GOODBY_MESSAGE);
