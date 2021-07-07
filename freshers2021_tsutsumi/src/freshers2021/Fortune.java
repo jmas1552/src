@@ -33,7 +33,7 @@ class Fortune {
 			for(int i=0; i<3; i++){
 				System.out.print("‚ ‚È‚½‚Ì–¼‘O‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
 				nameAgain=stdIn.next();
-				if("".equals(nameAgain)){
+				if(!("".equals(nameAgain))){
 					nameAgain();
 					continue;
 				}//ˆ—I—¹
