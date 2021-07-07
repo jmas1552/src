@@ -8,9 +8,10 @@ class Num{
 	
 	private static final String YES= "y";
 	private static final String NO="n";
+	Scanner stdIn=new Scanner(System.in);
 	
 	public void count(){
-		Scanner stdIn=new Scanner(System.in);
+		
 	
 
 		

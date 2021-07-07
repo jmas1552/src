@@ -11,36 +11,36 @@ class Fortune {
 	public static final String MIDDLE_HAPPY = "中吉です。";
 	public static final String NEXT_TO_WORST_HAPPY = "小吉です";
 	public static final String WORST_HAPPY = "凶です。ファイト！！";
-	String name;
+	String name=null;
 	String nameAgain;
 	Scanner stdIn=new Scanner(System.in);
 	Random rand=new Random();
 	
 	public void  today(){
 
- 		
-		
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊");
 		System.out.println("今日の運勢プログラム");
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊");
 		try {	
-		
 			for(int i=0; i<3; i++){
 				System.out.print("あなたの名前を入力してください");
-				name=stdIn.next();
-				if(!("".equals(name))){
+				name=stdIn.nextLine();
+
+				if(name.isEmpty()){
+					if(i==2) {
+						System.out.println("！！！！！！！！！！！！！！！！！！！");
+						System.out.println("名前の入力がなかったため、処理を終了します。");
+						System.out.println("！！！！！！！！！！！！！！！！！！！");
+					}
+				}else {
 					todaysFortune();
-					break;
-				}else if(i == 2){
-					System.out.println("！！！！！！！！！！！！！！！！！！！");
-					System.out.println("名前の入力がなかったため、処理を終了します。");
-					System.out.println("！！！！！！！！！！！！！！！！！！！");
 					break;
 				}
 			}
-		
-		} catch (InputMismatchException e) {
+		}catch (InputMismatchException e) {
 			MainProgram.messageInputMismatch();
+		}catch (Exception e)  {
+			MainProgram.messageException();
 		}
 	}	
 	
