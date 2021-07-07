@@ -26,19 +26,19 @@ class Fortune {
 		System.out.println("今日の運勢プログラム");
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊");
 		try {	
-		System.out.println("あなたの名前を入力してください");
-		String name=stdIn.next();
 		
-		if("".equals(name)){
 			for(int i=0; i<3; i++){
 				System.out.print("あなたの名前を入力してください");
-				nameAgain=stdIn.next();
-				if(!("".equals(nameAgain))){
-					nameAgain();
+				name=stdIn.next();
+				if(!("".equals(name))){
 					continue;
-				}//処理終了
+				}else if(i == 2){
+					System.out.println("！！！！！！！！！！！！！！！！！！！");
+					System.out.println("名前の入力がなかったため、処理を終了します。");
+					System.out.println("！！！！！！！！！！！！！！！！！！！");
+					System.exit(0);
+				}
 			}
-		}
 		
 		} catch (InputMismatchException e) {
 			MainProgram.messageInputMismatch();
@@ -83,7 +83,5 @@ class Fortune {
 	public void worstHappy() {
 		System.out.print(WORST_HAPPY);
 	}
-	public void nameAgain() {
-		name=nameAgain;
-	}
+
 }
