@@ -7,10 +7,11 @@ class JpnSpringFestival {
 
 	private static final String YES = "y";
 	private static final String NO = "n";
-	public static final String names[] = new String[6];
-	public static final int beansNum[] = new int[6];
+	private static final String names[] = new String[6];
+	private static final int beansNum[] = new int[6];
 	Scanner stdIn = new Scanner(System.in);
 
+	//節分アルゴリズム開始確認メソッド
 	public void algorithm() throws SubException{
 
 		names[0] = "じいちゃん";
@@ -25,7 +26,7 @@ class JpnSpringFestival {
 		System.out.println("節分アルゴリズムプログラム");
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊");
 
-		// 節分の日か
+		// 節分の日か確認
 		System.out.println("今日は節分ですか(y/n)");
 		try {
 			String answer = stdIn.next();
@@ -48,7 +49,7 @@ class JpnSpringFestival {
 		}
 	}
 
-	// 節分の日アルゴリズム開始
+	// 節分の日アルゴリズム開始　
 	public void startAlgorithm() throws SubException{
 
 		try {
@@ -56,6 +57,7 @@ class JpnSpringFestival {
 			for (int i = 0; i < beansNum.length; i++) {
 				System.out.println(names[i] + "の年齢");
 				beansNum[i] = stdIn.nextInt();
+			//各人年齢100歳までとする（＝超えたものはエラーメッセージ表示）
 				if (beansNum[i] > 100) {
 					MainProgram.messageInputMismatch();
 					System.exit(1);
@@ -66,6 +68,7 @@ class JpnSpringFestival {
 				System.out.print("＊＊＊" + names[i] + "は豆を");
 				System.out.println(beansNum[i] + "粒食べました＊＊＊");
 			}
+			//各人の食べた豆を条件に応じて加算していく
 			int sum = 0;
 			String beans100Piaces = null;
 			String beans200Piaces = null;

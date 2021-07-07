@@ -10,7 +10,8 @@ class MainProgram {
 	public static final String BLANK_LINE = "";
 	public static final String GOODBY_MESSAGE = "またのご利用をお待ちしております。";
 	public static final String THANKS_MESSAGE = "ご利用ありがとうございました。";
-
+	public static Scanner stdIn = new Scanner(System.in);
+	
 	public static void main(String[] args) {
 
 		mainScreen();
@@ -19,7 +20,7 @@ class MainProgram {
 	// メイン画面
 	public static void mainScreen() {
 
-		Scanner stdIn = new Scanner(System.in);
+		
 
 		System.out.println("＊＊＊ プログラミング体験アプリへ ようこそ！＊＊＊");
 		System.out.println("1 : 数字並べ替えプログラム");
@@ -65,7 +66,8 @@ class MainProgram {
 			}
 			// 電気自転車充電プログラム
 			else if (x == 4) {
-// TODO				Car.battery();
+				Car car = new Car();
+				car.charge();
 				System.out.println(BLANK_LINE);
 				System.out.println(THANKS_MESSAGE);
 				System.out.println(GOODBY_MESSAGE);
