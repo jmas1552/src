@@ -80,7 +80,6 @@ class Num{
 			System.out.println(MainProgram.EXCLAMATION_MARK);
 			System.out.println(MainProgram.EROOR_MESSAGE_ILLEGAL_INPUT);
 			System.out.println(MainProgram.EXCLAMATION_MARK);
-			System.exit(1);
 		}
 		
 	}
