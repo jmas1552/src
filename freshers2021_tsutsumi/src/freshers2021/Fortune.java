@@ -12,7 +12,8 @@ class Fortune {
 	public static final String NEXT_TO_WORST_HAPPY = "小吉です";
 	public static final String WORST_HAPPY = "凶です。ファイト！！";
 	String name;
-
+	String nameAgain;
+	
 	public void  today(){
 	
 		Scanner stdIn=new Scanner(System.in);
@@ -32,10 +33,10 @@ class Fortune {
 			//まだ条件設定完了していない
 			for(int i=0; i<3; i++){
 				System.out.println("あなたの名前を入力してください");
-				String nameAgain=stdIn.next();
+				nameAgain=stdIn.next();
 				if(nameAgain != null){
-					name=nameAgain;
-					break;
+					nameAgain();
+					continue;
 				}//処理終了
 			}
 		}
@@ -82,5 +83,8 @@ class Fortune {
 
 	public void worstHappy() {
 		System.out.print(WORST_HAPPY);
+	}
+	public void nameAgain() {
+		name=nameAgain;
 	}
 }
