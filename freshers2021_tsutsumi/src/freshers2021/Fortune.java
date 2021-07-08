@@ -25,7 +25,7 @@ class Fortune {
 		System.out.println("今日の運勢プログラム");
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊");
 		try {
-			//名前記入を要求
+			//名前入力を要求
 			for (int i = 0; i < 3; i++) {
 				System.out.print("あなたの名前を入力してください。==>");
 				name = stdIn.nextLine();
