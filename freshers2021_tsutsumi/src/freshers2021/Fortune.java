@@ -11,11 +11,14 @@ class Fortune {
 	private static final String MIDDLE_HAPPY = "中吉です。";
 	private static final String NEXT_TO_WORST_HAPPY = "小吉です";
 	private static final String WORST_HAPPY = "凶です。ファイト！！";
+	public static final String EXCLAMATION_MARK = "！！！！！！！！！！！！！！！！！！！！";
+	public static final String EROOR_MESSAGE_ILLEGAL_INPUT = "不正な値が入力されました。処理を終了します。";
+	public static final String BLANK_LINE = "";
 	String name=null;
 	Scanner stdIn=new Scanner(System.in);
 	Random rand=new Random();
 	
-	public void  today(){
+	public void  startTodaysFortune()throws SubException{
 
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊");
 		System.out.println("今日の運勢プログラム");
@@ -33,15 +36,19 @@ class Fortune {
 						return;
 					}
 				}
-			}todaysFortune();
+			}decideTodaysFortune();
 		}catch (InputMismatchException e) {
-			MainProgram.messageInputMismatch();
-		}catch (Exception e)  {
-			MainProgram.messageException();
+			System.out.println(EXCLAMATION_MARK);
+			System.out.println(EROOR_MESSAGE_ILLEGAL_INPUT);
+			System.out.println(EXCLAMATION_MARK);
+			throw new SubException(e);
+
+		}catch (Exception e) {
+				throw new SubException(e);
 		}
 	}	
 	
-	public void  todaysFortune(){
+	public void  decideTodaysFortune(){
 		
 		
 		System.out.print(name + "さんの今日の運勢は、" );
