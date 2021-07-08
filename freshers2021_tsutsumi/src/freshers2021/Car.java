@@ -11,9 +11,11 @@ public class Car {
 	double fuelEconomy=1.5;
 	private static final String YES= "y";
 	private static final String NO="n";
+	public static final String EROOR_MESSAGE_ILLEGAL_INPUT = "終了します。";
 	
 	
-	public void charge(){
+	public void charge()throws NotStartProgramException{
+		try {
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊＊＊");
 		System.out.println("電気自転車充電プログラム");
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊＊＊");
@@ -25,27 +27,24 @@ public class Car {
 		
 		if (NO.equals(chargeAnswer)) {
 			System.out.println("終了します。");
+			throw new RuntimeException();
+			}
 		
-		} else if (YES.equals(chargeAnswer)) {
-			startCharge();
-		}
-	}
-		
-	public void startCharge(){
 		System.out.println("何キロワット充電しますか？");
 		howChargeAnswer=stdIn.nextInt();
-		
-		calculateCharge();
-		
 		System.out.println(howChargeAnswer + "キロワット、充電しました。");
 		
 		System.out.print("あなたのJ-charyは、");
 		System.out.println(howChargeAnswer*fuelEconomy + "km走ることが出来ます。");
-		
 		sumFee=howChargeAnswer*(int)fuelFee;
 		
 		System.out.println("充電にかかった費用は" + sumFee + "円です。");
+	}catch (RuntimeException e) {
+		throw new NotStartProgramException(e);
 	}
+	}
+	
+	//充電量に応じた電気代を決める
 	public void calculateCharge(){
 		if(howChargeAnswer<=30) {
 			fuelFee=17.73;
