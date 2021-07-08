@@ -20,15 +20,16 @@ class Fortune {
 	Random rand = new Random();
 
 	public void startTodaysFortune() throws SubException, NotStartProgramException {
-
+		//表題表示
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊");
 		System.out.println("今日の運勢プログラム");
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊");
 		try {
+			//名前記入を要求
 			for (int i = 0; i < 3; i++) {
 				System.out.print("あなたの名前を入力してください");
 				name = stdIn.nextLine();
-
+				//3回名前が未記入だったら例外処理にてプログラム終了
 				if (name.isEmpty()) {
 					if (i == 2) {
 						throw new RuntimeException();
@@ -48,47 +49,27 @@ class Fortune {
 			throw new SubException(e);
 		}
 	}
-
+	
+	//今日の運勢を決める
 	public void decideTodaysFortune() {
 		// 乱数設定
 		int rnd = rand.nextInt(10);
 
 		if (0 <= rnd && rnd < 1) {
-			// 大吉
-			bestHappy();
+			// 大吉で表示するメッセージ
+			System.out.print(BEST_HAPPY);
 		} else if (1 <= rnd && rnd <= 2) {
 			// 吉
-			secondHappy();
+			System.out.print(SECOND_HAPPY);
 		} else if (3 <= rnd && rnd <= 6) {
 			// 中吉
-			middleHappy();
+			System.out.print(MIDDLE_HAPPY);
 		} else if (6 < rnd && rnd <= 8) {
 			// 小吉
-			secondUnHappy();
+			System.out.print(NEXT_TO_WORST_HAPPY);
 		} else if (8 < rnd && rnd <= 10) {
 			// 凶
-			worstHappy();
+			System.out.print(WORST_HAPPY);
 		}
 	}
-
-	public void bestHappy() {
-		System.out.print(BEST_HAPPY);
-	}
-
-	public void secondHappy() {
-		System.out.print(SECOND_HAPPY);
-	}
-
-	public void middleHappy() {
-		System.out.print(MIDDLE_HAPPY);
-	}
-
-	public void secondUnHappy() {
-		System.out.print(NEXT_TO_WORST_HAPPY);
-	}
-
-	public void worstHappy() {
-		System.out.print(WORST_HAPPY);
-	}
-
 }
