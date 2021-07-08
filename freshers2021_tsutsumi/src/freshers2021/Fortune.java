@@ -29,7 +29,7 @@ class Fortune {
 			for (int i = 0; i < 3; i++) {
 				System.out.print("あなたの名前を入力してください。==>");
 				name = stdIn.nextLine();
-				//3回名前が未記入だったら例外処理にてプログラム終了
+				//3回名前が未入力だったら例外処理にてプログラム終了
 				if (name.isEmpty()) {
 					if (i == 2) {
 						throw new RuntimeException();
@@ -41,7 +41,7 @@ class Fortune {
 					break;
 				}
 			}
-		//3回名前記入だった際の例外処理
+		//3回名前未入力だった際の例外処理
 		} catch (RuntimeException e) {
 			System.out.println(EXCLAMATION_MARK);
 			System.out.println(NO_NAME_EROOR_MESSAGE);
