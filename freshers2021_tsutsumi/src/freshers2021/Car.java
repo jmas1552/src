@@ -6,7 +6,7 @@ import java.util.InputMismatchException;
 public class Car {
 
 	Scanner stdIn = new Scanner(System.in);
-	private int howChargeAnswer;
+	private double howChargeAnswer;
 	private int sumFee;
 	private double electricBill;
 	private static final double FUEL_ECONMY = 1.5;
@@ -42,7 +42,8 @@ public class Car {
 			System.out.print("あなたのJ-charyは、");
 			System.out.println(howChargeAnswer * FUEL_ECONMY + "km走ることが出来ます。");
 			
-			sumFee = howChargeAnswer * (int) electricBill;
+			decideElectricBill();
+			sumFee =(int)( howChargeAnswer * electricBill);
 			System.out.println("充電にかかった費用は" + sumFee + "円です。");
 		} catch (InputMismatchException e) {
 			System.out.println(MainProgram.EXCLAMATION_MARK);
