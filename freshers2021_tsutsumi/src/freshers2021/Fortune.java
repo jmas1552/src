@@ -34,17 +34,18 @@ class Fortune {
 						System.out.println(EXCLAMATION_MARK);
 						System.out.println(NO_NAME_EROOR_MESSAGE);
 						System.out.println(EXCLAMATION_MARK);
-						return;
+						throw new Exception();
 					}
+				} else {
+					decideTodaysFortune();
 				}
 			}
-			decideTodaysFortune();
+
 		} catch (InputMismatchException e) {
 			System.out.println(EXCLAMATION_MARK);
 			System.out.println(EROOR_MESSAGE_ILLEGAL_INPUT);
 			System.out.println(EXCLAMATION_MARK);
 			throw new SubException(e);
-
 		} catch (Exception e) {
 			throw new SubException(e);
 		}
