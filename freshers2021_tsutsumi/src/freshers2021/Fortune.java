@@ -2,7 +2,6 @@ package freshers2021;
 
 import java.util.Scanner;
 import java.util.Random;
-import java.util.InputMismatchException;
 
 class Fortune {
 
@@ -18,7 +17,8 @@ class Fortune {
 	String name = null;
 	Scanner stdIn = new Scanner(System.in);
 	Random rand = new Random();
-
+	
+	//	今日の運勢プログラムスタート
 	public void startTodaysFortune() throws SubException, NotStartProgramException {
 		//表題表示
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊");
@@ -35,22 +35,25 @@ class Fortune {
 						throw new RuntimeException();
 					}
 				} else {
+					//nameさんの今日の運勢表示
 					System.out.print(name + "さんの今日の運勢は、");
 					decideTodaysFortune();
 					break;
 				}
 			}
+		//3回名前記入だった際の例外処理
 		} catch (RuntimeException e) {
 			System.out.println(EXCLAMATION_MARK);
 			System.out.println(NO_NAME_EROOR_MESSAGE);
 			System.out.println(EXCLAMATION_MARK);
 			throw new NotStartProgramException(e);
-		} catch (Exception e) {
+		//全般的な例外処理
+		}catch (Exception e) {
 			throw new SubException(e);
 		}
 	}
 	
-	//今日の運勢を決める
+	//今日の運勢を決めるメソッド
 	public void decideTodaysFortune() {
 		// 乱数設定
 		int rnd = rand.nextInt(10);
@@ -59,16 +62,16 @@ class Fortune {
 			// 大吉で表示するメッセージ
 			System.out.print(BEST_HAPPY);
 		} else if (1 <= rnd && rnd <= 2) {
-			// 吉
+			// 吉で表示するメッセージ
 			System.out.print(SECOND_HAPPY);
 		} else if (3 <= rnd && rnd <= 6) {
-			// 中吉
+			// 中吉で表示するメッセージ
 			System.out.print(MIDDLE_HAPPY);
 		} else if (6 < rnd && rnd <= 8) {
-			// 小吉
+			// 小吉で表示するメッセージ
 			System.out.print(NEXT_TO_WORST_HAPPY);
 		} else if (8 < rnd && rnd <= 10) {
-			// 凶
+			// 凶で表示するメッセージ
 			System.out.print(WORST_HAPPY);
 		}
 	}
