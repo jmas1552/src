@@ -19,7 +19,7 @@ class Fortune {
 	Scanner stdIn = new Scanner(System.in);
 	Random rand = new Random();
 
-	public void startTodaysFortune() throws SubException,NotStartProgramException {
+	public void startTodaysFortune() throws SubException, NotStartProgramException {
 
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊");
 		System.out.println("今日の運勢プログラム");
@@ -31,26 +31,25 @@ class Fortune {
 
 				if (name.isEmpty()) {
 					if (i == 2) {
-						System.out.println(EXCLAMATION_MARK);
-						System.out.println(NO_NAME_EROOR_MESSAGE);
-						System.out.println(EXCLAMATION_MARK);
 						throw new RuntimeException();
 					}
-				}else {
-					System.out.print(name + "さんの今日の運勢は、" );
+				} else {
+					System.out.print(name + "さんの今日の運勢は、");
 					decideTodaysFortune();
 					break;
 				}
 			}
-		}catch(RuntimeException e) {
+		} catch (RuntimeException e) {
+			System.out.println(EXCLAMATION_MARK);
+			System.out.println(NO_NAME_EROOR_MESSAGE);
+			System.out.println(EXCLAMATION_MARK);
 			throw new NotStartProgramException(e);
 		} catch (Exception e) {
 			throw new SubException(e);
 		}
 	}
-	
-	
-		public void decideTodaysFortune() {
+
+	public void decideTodaysFortune() {
 		// 乱数設定
 		int rnd = rand.nextInt(10);
 
