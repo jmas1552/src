@@ -13,65 +13,66 @@ class Fortune {
 	private static final String WORST_HAPPY = "凶です。ファイト！！";
 	public static final String EXCLAMATION_MARK = "！！！！！！！！！！！！！！！！！！！！";
 	public static final String EROOR_MESSAGE_ILLEGAL_INPUT = "不正な値が入力されました。処理を終了します。";
+	public static final String NO_NAME_EROOR_MESSAGE = "名前の入力がなかったため、処理を終了します。";
 	public static final String BLANK_LINE = "";
-	String name=null;
-	Scanner stdIn=new Scanner(System.in);
-	Random rand=new Random();
-	
-	public void  startTodaysFortune()throws SubException{
+	String name = null;
+	Scanner stdIn = new Scanner(System.in);
+	Random rand = new Random();
+
+	public void startTodaysFortune() throws SubException {
 
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊");
 		System.out.println("今日の運勢プログラム");
 		System.out.println("＊＊＊＊＊＊＊＊＊＊＊");
-		try {	
-			for(int i=0; i<3; i++){
+		try {
+			for (int i = 0; i < 3; i++) {
 				System.out.print("あなたの名前を入力してください");
-				name=stdIn.nextLine();
+				name = stdIn.nextLine();
 
-				if(name.isEmpty()){
-					if(i==2) {
-						System.out.println("！！！！！！！！！！！！！！！！！！！");
-						System.out.println("名前の入力がなかったため、処理を終了します。");
-						System.out.println("！！！！！！！！！！！！！！！！！！！");
+				if (name.isEmpty()) {
+					if (i == 2) {
+						System.out.println(EXCLAMATION_MARK);
+						System.out.println(NO_NAME_EROOR_MESSAGE);
+						System.out.println(EXCLAMATION_MARK);
 						return;
 					}
 				}
-			}decideTodaysFortune();
-		}catch (InputMismatchException e) {
+			}
+			decideTodaysFortune();
+		} catch (InputMismatchException e) {
 			System.out.println(EXCLAMATION_MARK);
 			System.out.println(EROOR_MESSAGE_ILLEGAL_INPUT);
 			System.out.println(EXCLAMATION_MARK);
 			throw new SubException(e);
 
-		}catch (Exception e) {
-				throw new SubException(e);
+		} catch (Exception e) {
+			throw new SubException(e);
 		}
-	}	
-	
-	public void  decideTodaysFortune(){
-		
-		
-		System.out.print(name + "さんの今日の運勢は、" );
-	
-		//乱数設定
+	}
+
+	public void decideTodaysFortune() {
+
+		System.out.print(name + "さんの今日の運勢は、");
+
+		// 乱数設定
 		int rnd = rand.nextInt(10);
-		
-		if(0 <= rnd && rnd < 1) {
-		 // 大吉
-	 	bestHappy();
-			}else if(1 <= rnd && rnd <= 2) {
-		// 吉
-				secondHappy();
-			}else if(3 <= rnd && rnd <= 6){
-		// 中吉
-				middleHappy();
-			}else if(6 < rnd && rnd <= 8){
-		// 小吉
-				secondUnHappy();
-			}else if(8 < rnd && rnd <= 10){
-		// 凶
-				worstHappy();
-			}
+
+		if (0 <= rnd && rnd < 1) {
+			// 大吉
+			bestHappy();
+		} else if (1 <= rnd && rnd <= 2) {
+			// 吉
+			secondHappy();
+		} else if (3 <= rnd && rnd <= 6) {
+			// 中吉
+			middleHappy();
+		} else if (6 < rnd && rnd <= 8) {
+			// 小吉
+			secondUnHappy();
+		} else if (8 < rnd && rnd <= 10) {
+			// 凶
+			worstHappy();
+		}
 	}
 
 	public void bestHappy() {
