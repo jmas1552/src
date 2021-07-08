@@ -36,17 +36,12 @@ class Fortune {
 						System.out.println(EXCLAMATION_MARK);
 						throw new RuntimeException();
 					}
-				} else {
+				}else {
 					System.out.print(name + "Ç≥ÇÒÇÃç°ì˙ÇÃâ^ê®ÇÕÅA" );
 					decideTodaysFortune();
+					break;
 				}
 			}
-
-		} catch (InputMismatchException e) {
-			System.out.println(EXCLAMATION_MARK);
-			System.out.println(EROOR_MESSAGE_ILLEGAL_INPUT);
-			System.out.println(EXCLAMATION_MARK);
-			throw new SubException(e);
 		}catch(RuntimeException e) {
 			throw new NotStartProgramException(e);
 		} catch (Exception e) {
