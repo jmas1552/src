@@ -27,7 +27,7 @@ class Fortune {
 		try {
 			//名前記入を要求
 			for (int i = 0; i < 3; i++) {
-				System.out.print("あなたの名前を入力してください");
+				System.out.print("あなたの名前を入力してください。==>");
 				name = stdIn.nextLine();
 				//3回名前が未記入だったら例外処理にてプログラム終了
 				if (name.isEmpty()) {
