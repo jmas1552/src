@@ -8,7 +8,7 @@ class JpnSpringFestival {
 	private static final String YES = "y";
 	private static final String NO = "n";
 	private static final String NAMES[] = new String[6];
-	private static final int BEANS_NAME[] = new int[6];
+	private static final int BEANS_NUM[] = new int[6];
 	Scanner stdIn = new Scanner(System.in);
 
 	//節分アルゴリズム開始確認メソッド
@@ -54,44 +54,57 @@ class JpnSpringFestival {
 
 		try {
 			// 各人の年齢入力を要求
-			for (int i = 0; i < BEANS_NAME.length; i++) {
+			for (int i = 0; i < BEANS_NUM.length; i++) {
 				System.out.println(NAMES[i] + "の年齢");
-				BEANS_NAME[i] = stdIn.nextInt();
-			//各人年齢100歳までとする（＝超えたものはエラーメッセージ表示）
-				if (BEANS_NAME[i] > 100) {
+				BEANS_NUM[i] = stdIn.nextInt();
+			//各人年齢100歳までとする（→超えたものはエラーメッセージ表示）
+				if (BEANS_NUM[i] > 100) {
 					MainProgram.messageInputMismatch();
 					System.exit(1);
 				}
 			}
 			// 各人の食べた豆を表示
-			for (int i = 0; i < BEANS_NAME.length; i++) {
+			for (int i = 0; i < BEANS_NUM.length; i++) {
 				System.out.print("＊＊＊" + NAMES[i] + "は豆を");
-				System.out.println(BEANS_NAME[i] + "粒食べました＊＊＊");
+				System.out.println(BEANS_NUM[i] + "粒食べました＊＊＊");
 			}
 			//各人の食べた豆を条件に応じて加算していく
 			int sum = 0;
 			String beans100Piaces = null;
 			String beans200Piaces = null;
-			for (int j = 0; j < BEANS_NAME.length; j++) {
-				sum += BEANS_NAME[j];
+			for (int j = 0; j < BEANS_NUM.length; j++) {
+				sum += BEANS_NUM[j];
 
 				// 100個目の豆を食べた人表示
 				if (beans100Piaces == null && sum >= 100) {
 					beans100Piaces = NAMES[j];
-					System.out.println("100粒目の豆を食べたひとは" + NAMES[j]);
+					// System.out.println("100粒目の豆を食べたひとは" + NAMES[j]);
 
 					// 200個目の豆を食べた人表示
 				} else if (beans200Piaces == null && sum >= 200) {
 					beans200Piaces = NAMES[j];
-					System.out.println("200粒目の豆を食べたひとは" + NAMES[j]);
+					// System.out.println("200粒目の豆を食べたひとは" + NAMES[j]);
 				}
 			}
-			if (sum < 100) {
+			
+			if (beans100Piaces == null) {
 				System.out.println("100粒目の豆を食べたひとはいません。");
+			} else {
+				System.out.println("100粒目の豆を食べたひとは" + beans100Piaces);				
 			}
-			if (sum < 200) {
+			
+			if (beans200Piaces == null) {
 				System.out.println("200粒目の豆を食べたひとはいません。");
+			} else {
+				System.out.println("200粒目の豆を食べたひとは" + beans200Piaces);
 			}
+			
+			//			if (sum < 100) {
+//				System.out.println("100粒目の豆を食べたひとはいません。");
+//			}
+//			if (sum < 200) {
+//				System.out.println("200粒目の豆を食べたひとはいません。");
+//			}
 			// 家族全員が食べた豆の合計を表示
 			System.out.print("家族全員で食べた豆の数は、");
 			System.out.println(sum + "です");

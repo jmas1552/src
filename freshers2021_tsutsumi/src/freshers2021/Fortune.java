@@ -6,13 +6,12 @@ import java.util.InputMismatchException;
 
 class Fortune {
 
-	public static final String BEST_HAPPY = "大吉です。おめでとうございます！";
-	public static final String SECOND_HAPPY = "吉です。";
-	public static final String MIDDLE_HAPPY = "中吉です。";
-	public static final String NEXT_TO_WORST_HAPPY = "小吉です";
-	public static final String WORST_HAPPY = "凶です。ファイト！！";
+	private static final String BEST_HAPPY = "大吉です。おめでとうございます！";
+	private static final String SECOND_HAPPY = "吉です。";
+	private static final String MIDDLE_HAPPY = "中吉です。";
+	private static final String NEXT_TO_WORST_HAPPY = "小吉です";
+	private static final String WORST_HAPPY = "凶です。ファイト！！";
 	String name=null;
-	String nameAgain;
 	Scanner stdIn=new Scanner(System.in);
 	Random rand=new Random();
 	
@@ -31,12 +30,10 @@ class Fortune {
 						System.out.println("！！！！！！！！！！！！！！！！！！！");
 						System.out.println("名前の入力がなかったため、処理を終了します。");
 						System.out.println("！！！！！！！！！！！！！！！！！！！");
+						return;
 					}
-				}else {
-					todaysFortune();
-					break;
 				}
-			}
+			}todaysFortune();
 		}catch (InputMismatchException e) {
 			MainProgram.messageInputMismatch();
 		}catch (Exception e)  {
