@@ -8,7 +8,7 @@ public class Car {
 	Scanner stdIn = new Scanner(System.in);
 	private int howChargeAnswer;
 	private int sumFee;
-	private double fuelFee;
+	private double electricBill;
 	private static final double FUEL_ECONMY = 1.5;
 	private static final String YES = "y";
 	private static final String NO = "n";
@@ -41,8 +41,8 @@ public class Car {
 
 			System.out.print("あなたのJ-charyは、");
 			System.out.println(howChargeAnswer * FUEL_ECONMY + "km走ることが出来ます。");
-			sumFee = howChargeAnswer * (int) fuelFee;
-
+			
+			sumFee = howChargeAnswer * (int) electricBill;
 			System.out.println("充電にかかった費用は" + sumFee + "円です。");
 		} catch (InputMismatchException e) {
 			System.out.println(MainProgram.EXCLAMATION_MARK);
@@ -55,15 +55,15 @@ public class Car {
 	}
 
 	// 充電量に応じた電気代を決める
-	public void calculateCharge() {
+	public void decideElectricBill() {
 		if (howChargeAnswer <= 30) {
-			fuelFee = 17.73;
+			electricBill = 17.73;
 		} else if (howChargeAnswer >= 31 && howChargeAnswer <= 80) {
-			fuelFee = 21.26;
+			electricBill = 21.26;
 		} else if (howChargeAnswer >= 81 && howChargeAnswer <= 100) {
-			fuelFee = 24.07;
+			electricBill = 24.07;
 		} else if (howChargeAnswer >= 101 && howChargeAnswer <= 200) {
-			fuelFee = 25.31;
+			electricBill = 25.31;
 		}
 	}
 }
